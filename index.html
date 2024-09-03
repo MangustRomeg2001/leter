@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Segundo Aniversario</title>
+    <link rel="icon" href="https://www.flaticon.es/icono-gratis/corazon_6003502" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('luna.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #ff6f61;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+        .content-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #fff;
+        }
+        .image-container, .video-container {
+            margin: 30px 0;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.2em;
+            color: white;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide img, .carousel-slide video {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-controls button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            outline: none;
+        }
+        .music-player {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+            max-width: 300px;
+        }
+        .music-player h3 {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .song-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .music-player audio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #ff6f61;
+            padding: 10px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .music-player {
+                margin: 20px 0 0 0;
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .quote {
+                font-size: 1.2em;
+            }
+        }
+        
+        .image-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .image-button img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Feliz Segundo Aniversario</h1>
+        <h2>A mi amada esposa</h2>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="quote">
+                "El amor no se mira, se siente, y aún más cuando ella estás junto a mi."
+            </div>
+
+            <!-- Carrusel de Fotos -->
+            <div id="photo-carousel" class="carousel-container image-container">
+                <div class="carousel-slide">
+                    <img src="karla1.jpg" alt="Foto 1">
+                    <img src="karla2.jpg" alt="Foto 2">
+                    <img src="karla3.jpg" alt="Foto 3">
+                    <img src="karla4.jpg" alt="Foto 4">
+                    <img src="karla5.jpg" alt="Foto 5">
+                    <img src="karla6.jpg" alt="Foto 6">
+                    <img src="karla7.jpg" alt="Foto 7">
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev" onclick="moveSlide('photo-carousel', -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide('photo-carousel', 1)">&#10095;</button>
+                </div>
+            </div>
+
+            <p>
+                Mi amor, han sido dos años maravillosos llenos de momentos inolvidables. 
+                Gracias por ser mi compañera, mi amiga y el amor de mi vida. 
+                Cada día a tu lado es una bendición y estoy emocionado por todos los 
+                momentos que aún nos esperan. Te amo con todo mi corazón.
+            </p>
+
+            <!-- Carrusel de Videos -->
+            <div id="video-carousel" class="carousel-container video-container">
+                <div class="carousel-slide">
+                    <video controls>
+                        <source src="karla1.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <video controls>
+                        <source src="karla2.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <video controls>
+                        <source src="karla3.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev" onclick="moveSlide('video-carousel', -1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide('video-carousel', 1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reproductor de Música -->
+        <div class="music-player">
+            <h3>Lista de Reproducción</h3>
+            
+            <div class="song">
+                <div class="song-title">La bilirrubina</div>
+                <audio controls>
+                    <source src="02.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+            <div class="song">
+                <div class="song-title">Darte un beso</div>
+                <audio controls>
+                    <source src="03.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+            <div class="song">
+                <div class="song-title">Burning Love</div>
+                <audio controls>
+                    <source src="04.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+
+            <div class="song">
+                <div class="song-title">You Are Not Alone</div>
+                <audio controls>
+                    <source src="05.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            
+        </div>
+
+        <!-- Botón para ir a otra página -->
+        <div class="button-container">
+            <a href="prueba.html">
+                <button class="image-button">
+                    <img src="heart.png" alt="Ir a otra página">
+                </button>
+            </a>
+
+             <!-- Botón para ir a otra página -->
+        <div class="button-container">
+            <a href="carta.html">
+                <button class="image-button">
+                    <img src="heart3.png" alt="Ir a otra página">
+                </button>
+            </a>
+            
+        </div>
+
+
+
+    <footer>
+        Siempre tuyo, Manuel Augusto Rojas Mejia
+    </footer>
+    
+    <script>
+        function moveSlide(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const slide = carousel.querySelector('.carousel-slide');
+            const slides = slide.children;
+            const slideWidth = slides[0].clientWidth;
+            const totalSlides = slides.length;
+            let currentIndex = parseInt(slide.getAttribute('data-index')) || 0;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            slide.setAttribute('data-index', currentIndex);
+        }
+    </script>
+
+</body>
+</html>
